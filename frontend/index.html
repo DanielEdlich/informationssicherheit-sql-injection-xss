@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQL - Injection</title>
+  </head>
+  <body>
+    <script type="module" src="main.js"></script>
+
+    <div id="app">
+      <h1>
+      <a href="http://localhost:5173/xss.html?somebody=%3Csvg%20onload=alert(1337)%3E"> XSS</a>
+    </h1>
+      <div class="form">
+        <div class="card">
+          <h1>Login</h1>
+          <form id="login" onsubmit="return false">
+            <label for="name">Name</label>
+            <input type="text" id="name" />
+            <label type="password" for="password">Password</label>
+            <input id="password" />
+            <input class="button" type="submit" value="Login" />
+          </form>
+        </div>
+        <div class="card">
+          <h1>Register</h1>
+          <form id="register" onsubmit="return false">
+            <label for="name">Name</label>
+            <input type="text" id="name" />
+            <label type="password" for="password">Password</label>
+            <input id="password" />
+            <input class="button" type="submit" value="Register" />
+          </form>
+        </div>
+      </div>
+      <div class="output"></div>
+    </div>
+    <!-- <script>alert(1)</script> -->
+  </body>
+</html>
