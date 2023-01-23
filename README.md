@@ -15,6 +15,7 @@ Start backend with:
 
 ## Frontend
 Requires: npm:latest 
+Install depemdemcies with: `npm install`
 Start frontend with: 
 ```
 npm run dev
