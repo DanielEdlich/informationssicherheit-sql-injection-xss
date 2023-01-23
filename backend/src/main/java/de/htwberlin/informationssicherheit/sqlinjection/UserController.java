@@ -33,7 +33,6 @@ public class UserController {
     @PostMapping(path = "/users/auth", consumes = {"application/json"})
     public ResponseEntity<UserDTO> authUser(@RequestBody UserDTO user){
         UserModel userModel = userDAO.authByNamePassword(user);
-//        user.setId(id);
         var userDTO = userModel.toUserDTO();
         return userModel.getId() != null ? ResponseEntity.ok(userDTO) : ResponseEntity.badRequest().build();
     }

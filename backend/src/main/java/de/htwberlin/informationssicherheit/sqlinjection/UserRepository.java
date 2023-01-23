@@ -13,6 +13,7 @@ public interface UserRepository extends JpaRepository<UserModel, String> {
     @Query("select u from UserModel u where u.name = :name AND u.password = :password")
     public UserModel authByNameEmail(@Param("name") String name, @Param("password") String password);
 
+    // JpaRepository automatically escapes strings - SQL-Injection not working
 //    @Override
 //    @Query("select UserModel from UserModel user where user.id = :s")
 //    Optional<UserModel> findById(String s);

@@ -3,7 +3,6 @@ package de.htwberlin.informationssicherheit.sqlinjection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import org.hibernate.validator.constraints.UniqueElements;
 
 @Entity
 @Table(name = "USER")
@@ -14,7 +13,6 @@ public class UserModel {
     private String id;
 
     @NotEmpty
-//    @UniqueElements
     private String name;
 
     @NotEmpty

@@ -13,7 +13,15 @@ public class UserDAO {
         this.em = em;
     }
 
+    /**
+     *
+     * Unsafe authentication of user.
+     *
+     * @param user that should be authenticated
+     * @return user data
+     */
     public UserModel authByNamePassword(UserDTO user) {
+        // create unsafe sql string
         String jql = "from UserModel where name = '" + user.getName() + "' AND password = '" + user.getPassword() + "'";
         TypedQuery<UserModel> q = em.createQuery(jql, UserModel.class);
         return q.getSingleResult();

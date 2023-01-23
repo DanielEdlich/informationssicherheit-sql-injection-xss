@@ -1,7 +1,6 @@
 package de.htwberlin.informationssicherheit.sqlinjection;
 
 import jakarta.validation.constraints.Size;
-import org.springframework.stereotype.Component;
 
 public class UserDTO {
 
